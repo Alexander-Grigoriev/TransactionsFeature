@@ -1,23 +1,32 @@
 // swift-tools-version: 5.9
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
 import PackageDescription
 
 let package = Package(
     name: "TransactionsFeature",
+    platforms: [
+        .iOS(.v16)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "TransactionsFeature",
-            targets: ["TransactionsFeature"]),
+        .library(name: "TransactionsFeature", targets: ["TransactionsFeature"])
+    ],
+    dependencies: [
+        .package(path: "../SharedDomain"),
+        .package(path: "../CoreNetworking"),
+        .package(path: "../CorePersistence")
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "TransactionsFeature"),
+            name: "TransactionsFeature",
+            dependencies: [
+                "SharedDomain",
+                "CoreNetworking",
+                "CorePersistence"
+            ],
+            resources: [.process("Resources")]
+        ),
         .testTarget(
             name: "TransactionsFeatureTests",
-            dependencies: ["TransactionsFeature"]),
+            dependencies: ["TransactionsFeature"]
+        )
     ]
 )

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "A9A6F2E4-6E2C-4E9E-9C3A-2F4A4A9D54B1",
+    "date": "2026-01-01T10:15:30Z",
+    "amount": "12.50",
+    "currencyCode": "USD",
+    "category": "groceries",
+    "merchant": "Whole Foods"
+  },
+  {
+    "id": "C1F2F38A-7A42-4E8E-9B2E-55B6E50B2A16",
+    "date": "2026-01-03T18:04:00Z",
+    "amount": "45.10",
+    "currencyCode": "USD",
+    "category": "dining",
+    "merchant": "Chipotle"
+  }
+]
+
+
